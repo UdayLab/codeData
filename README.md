@@ -2,7 +2,7 @@
 To evaluate with each dataset:<br>
 python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<br>
 *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
-*some large files(add "!") cannot uproad because of limit of github strage.<br>
+*some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>
 
 # Example
  ## 1 Air Pollution<br>
