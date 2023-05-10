@@ -1,7 +1,8 @@
 # codeData
 To evaluate with each dataset:<br>
 python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<br>
-*three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.
+*three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
+*some large files(add "!") cannot uproad because of limit of github strage.<br>
 
 # Example
  ## 1 Air Pollution<br>
@@ -11,8 +12,7 @@ python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<b
   sep="\t"<br>
  ## 2 Trafic consestion<br>
   inputdata:TraficData.txt<br>
-  neighbordata:Tra_60k.txt,Tra_80k.txt,Tra_100k.txt<br>
-  #neighbor files are so large to upload.<br>
+  "!"neighbordata:Tra_60k.txt,Tra_80k.txt,Tra_100k.txt<br>
   minSup: 0.865,0.87,0.875<br>
   sep="\t"<br>
  ## 3 S10
@@ -23,7 +23,7 @@ python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<b
   sep="\t"<br>
  ## 4 Retail
   inputdata:retail.txt<br>
-  neighbordata:retail_250.txt,retail_500.txt,retail_750fre.txt<br>
+  "!"neighbordata:retail_250.txt,retail_500.txt,retail_750fre.txt<br>
   minSup: 0.1,0.15,0.2<br>
   sep="\t"<br>
   
