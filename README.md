@@ -3,8 +3,8 @@ To evaluate with each dataset:
 python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater
 *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.
 
-Example
- 1 Air Pollution
+#Example
+ ##1 Air Pollution
   inputdata:airDataset.txt
   neighbordata:Air_60k.txt,Air_80k.txt,Air_100k.txt
   minSup: 0.3,0.4,0.5
