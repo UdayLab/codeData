@@ -1,6 +1,6 @@
 # codeData
 To evaluate with each dataset:
-python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater:
+python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater\n
 *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.
 
 # Example
