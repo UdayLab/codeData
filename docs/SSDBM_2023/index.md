@@ -9,15 +9,15 @@ pip install pami psutil urllib
  The datasets need to conduct experiments are available at the following directories.<br>
    - database:<seqencial databases><br>
             airDataset.txt,TraficData.txt,retail.txt,s10t1seq6.txt,test.txt<br>
-     - neighbors:<neighbor files><br>
+   - neighbors:<neighbor files><br>
                 Air_100k.txt, Air_80k.txt, Air_60k.txt<br>
                 s10_250fre.txt, s10_500fre.txt, s10_750fre.txt<br>
                 testDis=1.txt, testDis=2.txt<br>
-     - tablesForNeighbors: <The nighbor files made from this table><br>
+   - tablesForNeighbors: <The nighbor files made from this table><br>
               tableForTest.txt,tableforair.txt,tableforretail.txt,tablefors10.txt<br>
- *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
-*some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>  
-*retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) 
+      *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
+      *some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>  
+      *retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) 
 # Executing our programs
 
 ## Terminal execution
