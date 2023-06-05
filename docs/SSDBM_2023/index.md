@@ -7,22 +7,29 @@ pip install pami psutil urllib
 
 # Datasets
  The datasets need to conduct experiments are available at the following directories.
-   - database:
-   - neighbors:
-   - tablesForNeighbors:
-   
+   - database:<seqencial databases>
+            airDataset.txt,TraficData.txt,retail.txt,s10t1seq6.txt,test.txt
+     - neighbors:<neighbor files>
+                Air_100k.txt, Air_80k.txt, Air_60k.txt
+                s10_250fre.txt, s10_500fre.txt, s10_750fre.txt,
+                testDis=1.txt, testDis=2.txt
+     - tablesForNeighbors: <The nighbor files made from this table>
+              tableForTest.txt,tableforair.txt,tableforretail.txt,tablefors10.txt
+ *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
+*some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>  
+*retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) 
 # Executing our programs
 
 ## Terminal execution
    The format to execute our program in the terminal is as follows:
    ```terminal
-   python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater
+   python3 spaitialSPADE.py inputFile OutputFile  neighborFile   minSup separater
    ```
       
 An example:
        
    ```terminal
-   python3 spaitialSPADE.py ????????
+   python3 spaitialSPADE.py s10t1seq6.txt result.txt S10_250fre.txt
    ```
        
 ## Python execution
@@ -40,59 +47,60 @@ minSup =<specifyMinSup>
 seperator = '<specifyYourSeperator>' # default sepereator is tabSpace
 
 #Step 3: calling the algorithm
+_ap = sp.Spade(inputFile,neighborFile,minSup,separator)
+ _ap.startMine()
+#Step 4 showing results
+_Patterns = _ap.getPatterns()
+_memUSS = _ap.getMemoryUSS()
+print("Total Memory in USS:", _memUSS)
+_memRSS = _ap.getMemoryRSS()
+print("Total Memory in RSS", _memRSS)
+_run = _ap.getRuntime()
+print("Total ExecutionTime in ms:", _run)
+print("Total number of Frequent Patterns:", len(_Patterns))
+#Step 5 saving patterns
+_ap.save("priOut3.txt")
+
 ```
 
 
 ```Python
 #Step 1: Import the library
 import spaitialSPADE as sp
-
+import pandas as pd
 #Step 2: Define the input parameters
 inputFile = '<specify the sequence database file name>'
 neighborhoodFile = '<specify the neighborhood file name'
 outputFileName = '<specify the output file name to store the patterns>'
-
-minSupList =<specifyMinSup>
-
+minSupList =<specify some MinSup in List>
 seperator = '<specifyYourSeperator>' # default sepereator is tabSpace
+result = pd.DataFrame(columns=['algorithm', 'minSup', 'patterns', 'runtime', 'memory']) 
+#initialize a data frame to store the results of Apriori algorithm
 
 #Step 3: calling the algorithm
-
-[]=??????
-
+algorithm = 'SpaitialSPADE'  #specify the algorithm name
+for minSupCount in minSupList:
+    obj =sp.Spade(inputFile,neighborhoodFile,minSupCount seperator)
+    obj.startMine()
+    #store the results in the data frame
+    result.loc[result.shape[0]] = [algorithm, minSupCount, len(obj.getPatterns()), obj.getRuntime(), obj.getMemoryRSS()]
+print(result)
 #Step 4: Plotting the results
-
-
+from PAMI.extras.graph import plotLineGraphsFromDataFrame as plt
+ab = plt.plotGraphsFromDataFrame(result)
+ab.plotGraphsFromDataFrame() #drawPlots()
 #Step 5: Saving the results in a latex format
-
+from PAMI.extras.graph import generateLatexFileFromDataFrame as gdf
+gdf.generateLatexCode(result)
 ```
 
 
 You can execute our program on a terminal or in a jupyter notebook. 
 
-# codeData
-To evaluate with each dataset:<br>
-python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<br>
-*three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
-*some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>
 
 
-# Input Example
- import spaitialSPADE as sp
- 
- _ap = sp.Spade('inputFile',"neighborFile",minSup,"separator")
- _ap.startMine()
- _Patterns = _ap.getPatterns()
- _memUSS = _ap.getMemoryUSS()
- print("Total Memory in USS:", _memUSS)
- _memRSS = _ap.getMemoryRSS()
- print("Total Memory in RSS", _memRSS)
- _run = _ap.getRuntime()
- print("Total ExecutionTime in ms:", _run)
- print("Total number of Frequent Patterns:", len(_Patterns))
- print("Error! The number of input parameters do not match the total number of parameters provided")
- _ap.save("priOut3.txt")
-# datasets and minimmum support
+
+# datasets and minimum support
  ## 1 Air Pollution<br>
   inputdata:airDataset.txt<br>
   neighbordata:Air_60k.txt,Air_80k.txt,Air_100k.txt<br>
