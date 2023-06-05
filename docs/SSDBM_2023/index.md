@@ -15,9 +15,11 @@ pip install pami psutil urllib
                 testDis=1.txt, testDis=2.txt<br>
    - tablesForNeighbors: The nighbor files made from this table<br>
               tableForTest.txt,tableforair.txt,tableforretail.txt,tablefors10.txt<br>
+              
+              
       *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
       *some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>  
-      *retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) 
+      *retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) <br> 
 # Executing our programs
 
 ## Terminal execution
