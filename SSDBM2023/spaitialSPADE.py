@@ -918,15 +918,15 @@ class Spade(_ab._sequentialSpatialPatterns):
 
 if __name__ == "__main__":
     _ap = str()
-    if len(_ab._sys.argv) == 4 or len(_ab._sys.argv) == 5:
+    if len(_ab._sys.argv) == 5 or len(_ab._sys.argv) == 6:
+        if len(_ab._sys.argv) == 6:
+            _ap = Spade(_ab._sys.argv[1], _ab._sys.argv[3], _ab._sys.argv[4],_ab._sys.argv[5])
         if len(_ab._sys.argv) == 5:
-            _ap = Spade(_ab._sys.argv[1], _ab._sys.argv[3], _ab._sys.argv[4])
-        if len(_ab._sys.argv) == 4:
-            _ap = Spade(_ab._sys.argv[1], _ab._sys.argv[3])
+            _ap = Spade(_ab._sys.argv[1], _ab._sys.argv[3],_ab._sys.argv[4])
         _ap.startMine()
         _Patterns = _ap.getPatterns()
         print("Total number of Frequent Patterns:", len(_Patterns))
-        _ap.savePatterns(_ab._sys.argv[2])
+        _ap.save(_ab._sys.argv[2])
         _memUSS = _ap.getMemoryUSS()
         print("Total Memory in USS:", _memUSS)
         _memRSS = _ap.getMemoryRSS()
