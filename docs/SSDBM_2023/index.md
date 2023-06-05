@@ -6,15 +6,15 @@ pip install pami psutil urllib
 '''
 
 # Datasets
- The datasets need to conduct experiments are available at the following directories.
-   - database:<seqencial databases>
-            airDataset.txt,TraficData.txt,retail.txt,s10t1seq6.txt,test.txt
-     - neighbors:<neighbor files>
-                Air_100k.txt, Air_80k.txt, Air_60k.txt
-                s10_250fre.txt, s10_500fre.txt, s10_750fre.txt,
-                testDis=1.txt, testDis=2.txt
-     - tablesForNeighbors: <The nighbor files made from this table>
-              tableForTest.txt,tableforair.txt,tableforretail.txt,tablefors10.txt
+ The datasets need to conduct experiments are available at the following directories.<br>
+   - database:<seqencial databases><br>
+            airDataset.txt,TraficData.txt,retail.txt,s10t1seq6.txt,test.txt<br>
+     - neighbors:<neighbor files><br>
+                Air_100k.txt, Air_80k.txt, Air_60k.txt<br>
+                s10_250fre.txt, s10_500fre.txt, s10_750fre.txt<br>
+                testDis=1.txt, testDis=2.txt<br>
+     - tablesForNeighbors: <The nighbor files made from this table><br>
+              tableForTest.txt,tableforair.txt,tableforretail.txt,tablefors10.txt<br>
  *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
 *some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>  
 *retail.txt and s10t1seq6.txt can be downloaded by this site(https://www.philippe-fournier-viger.com/spmf/index.php?link=datasets.php) 
@@ -34,10 +34,10 @@ An example:
        
 ## Python execution
 ```Python
-#Step 1: Import the library
+#Step 1: Import the library<br>
 import spaitialSPADE as sp
 
-#Step 2: Define the input parameters
+#Step 2: Define the input parameters<br>
 inputFile = '<specify the sequence database file name>'
 neighborhoodFile = '<specify the neighborhood file name'
 outputFileName = '<specify the output file name to store the patterns>'
@@ -46,10 +46,10 @@ minSup =<specifyMinSup>
 
 seperator = '<specifyYourSeperator>' # default sepereator is tabSpace
 
-#Step 3: calling the algorithm
+#Step 3: calling the algorithm<br>
 _ap = sp.Spade(inputFile,neighborFile,minSup,separator)
  _ap.startMine()
-#Step 4 showing results
+#Step 4 showing results<br>
 _Patterns = _ap.getPatterns()
 _memUSS = _ap.getMemoryUSS()
 print("Total Memory in USS:", _memUSS)
@@ -65,10 +65,10 @@ _ap.save("priOut3.txt")
 
 
 ```Python
-#Step 1: Import the library
+#Step 1: Import the library<br>
 import spaitialSPADE as sp
 import pandas as pd
-#Step 2: Define the input parameters
+#Step 2: Define the input parameters<br>
 inputFile = '<specify the sequence database file name>'
 neighborhoodFile = '<specify the neighborhood file name'
 outputFileName = '<specify the output file name to store the patterns>'
@@ -77,7 +77,7 @@ seperator = '<specifyYourSeperator>' # default sepereator is tabSpace
 result = pd.DataFrame(columns=['algorithm', 'minSup', 'patterns', 'runtime', 'memory']) 
 #initialize a data frame to store the results of Apriori algorithm
 
-#Step 3: calling the algorithm
+#Step 3: calling the algorithm<br>
 algorithm = 'SpaitialSPADE'  #specify the algorithm name
 for minSupCount in minSupList:
     obj =sp.Spade(inputFile,neighborhoodFile,minSupCount seperator)
@@ -85,17 +85,17 @@ for minSupCount in minSupList:
     #store the results in the data frame
     result.loc[result.shape[0]] = [algorithm, minSupCount, len(obj.getPatterns()), obj.getRuntime(), obj.getMemoryRSS()]
 print(result)
-#Step 4: Plotting the results
+#Step 4: Plotting the results<br>
 from PAMI.extras.graph import plotLineGraphsFromDataFrame as plt
 ab = plt.plotGraphsFromDataFrame(result)
 ab.plotGraphsFromDataFrame() #drawPlots()
-#Step 5: Saving the results in a latex format
+#Step 5: Saving the results in a latex format<br>
 from PAMI.extras.graph import generateLatexFileFromDataFrame as gdf
 gdf.generateLatexCode(result)
 ```
 
 
-You can execute our program on a terminal or in a jupyter notebook. 
+You can execute our program on a terminal or in a jupyter notebook. <br>
 
 
 
