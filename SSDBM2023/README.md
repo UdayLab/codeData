@@ -1,7 +1,7 @@
 # Requirements
 Python 3.8 or above is recommended to execute our program. Once you have an appropriate Python version, please install the following packages to execute our program.
 
-```terminal
+'''terminal
 pip install pami psutil urllib
 '''
 
@@ -26,7 +26,7 @@ pip install pami psutil urllib
        '''
        
 ## Python execution
-```Python
+Python
 #Step 1: Import the library
 import spaitialSPADE as sp
 
