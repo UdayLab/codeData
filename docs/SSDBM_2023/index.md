@@ -33,7 +33,8 @@ An example:
    ```
        
 ## Python execution
-```Python single minsup
+```Python 
+#for single minsup
 #Step 1: Import the library
 import spaitialSPADE as sp
 
@@ -63,7 +64,8 @@ _ap.save("priOut3.txt")
 ```
 
 
-```Python multiple minsup
+```Python 
+#for multiple minsup
 #Step 1: Import the library<br>
 import spaitialSPADE as sp
 import pandas as pd
