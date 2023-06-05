@@ -1,10 +1,73 @@
+# Requirements
+Python 3.8 or above is recommended to execute our program. Once you have an appropriate Python version, please install the following packages to execute our program.
+
+```terminal
+pip install pami psutil urllib
+'''
+
+# Datasets
+ The datasets need to conduct experiments are available at the following directories.
+   - database:
+   - neighbors:
+   - tablesForNeighbors:
+   
+# Executing our programs
+
+## Terminal execution
+       
+       The format to execute our program in the terminal is as follows:
+       ```terminal
+       python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater
+       '''
+       An example:
+       
+       ```terminal
+           python3 spaitialSPADE.py ????????
+       '''
+       
+## Python execution
+```Python
+#Step 1: Import the library
+import spaitialSPADE as sp
+
+#Step 2: Define the input parameters
+inputFile = '<specify the sequence database file name>'
+neighborhoodFile = '<specify the neighborhood file name'
+outputFileName = '<specify the output file name to store the patterns>'
+
+minSup =<specifyMinSup>
+
+seperator = '<specifyYourSeperator>' # default sepereator is tabSpace
+
+#Step 3: calling the algorithm
+'''
+
+
+You can execute our program on a terminal or in a jupyter notebook. 
+
 # codeData
 To evaluate with each dataset:<br>
 python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<br>
 *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
 *some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>
 
-# Example
+
+# Input Example
+ import spaitialSPADE as sp
+ 
+ _ap = sp.Spade('inputFile',"neighborFile",minSup,"separator")
+ _ap.startMine()
+ _Patterns = _ap.getPatterns()
+ _memUSS = _ap.getMemoryUSS()
+ print("Total Memory in USS:", _memUSS)
+ _memRSS = _ap.getMemoryRSS()
+ print("Total Memory in RSS", _memRSS)
+ _run = _ap.getRuntime()
+ print("Total ExecutionTime in ms:", _run)
+ print("Total number of Frequent Patterns:", len(_Patterns))
+ print("Error! The number of input parameters do not match the total number of parameters provided")
+ _ap.save("priOut3.txt")
+# datasets and minimmum support
  ## 1 Air Pollution<br>
   inputdata:airDataset.txt<br>
   neighbordata:Air_60k.txt,Air_80k.txt,Air_100k.txt<br>
