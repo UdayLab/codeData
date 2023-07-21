@@ -17,18 +17,18 @@ pip install pami psutil urllib
        
        The format to execute our program in the terminal is as follows:
        ```terminal
-       python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater
+       python3 GFSPm.py inputFile, neighborFile, OutputFile, minSup separater
        '''
        An example:
        
        ```terminal
-           python3 spaitialSPADE.py ????????
+           python3 GFSPm.py ????????
        '''
        
 ## Python execution
 Python
 #Step 1: Import the library
-import spaitialSPADE as sp
+import GFSPm as sp
 
 #Step 2: Define the input parameters
 inputFile = '<specify the sequence database file name>'
@@ -47,15 +47,15 @@ You can execute our program on a terminal or in a jupyter notebook.
 
 # codeData
 To evaluate with each dataset:<br>
-python3 spaitialSPADE.py inputFile, neighborFile, OutputFile, minSup separater<br>
+python3 GFSPm.py inputFile, neighborFile, OutputFile, minSup separater<br>
 *three different maxdistance neighborfiles for each dataset.Air and Traffic datasets are real distance.The others are randomly taken.<br>
 *some large neighbor files(add "!") cannot uproad because of limit of github strage.<br>
 
 
 # Input Example
- import spaitialSPADE as sp
+ import GFSPm as sp
  
- _ap = sp.Spade('inputFile',"neighborFile",minSup,"separator")
+ _ap = sp.GFSPm('inputFile',"neighborFile",minSup,"separator")
  _ap.startMine()
  _Patterns = _ap.getPatterns()
  _memUSS = _ap.getMemoryUSS()
