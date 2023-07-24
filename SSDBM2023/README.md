@@ -28,7 +28,7 @@ pip install pami psutil urllib
 ## Python execution
 Python
 #Step 1: Import the library
-import GFSPm as sp
+import GFSPm as gf
 
 #Step 2: Define the input parameters
 inputFile = '<specify the sequence database file name>'
@@ -53,9 +53,9 @@ python3 GFSPm.py inputFile, neighborFile, OutputFile, minSup separater<br>
 
 
 # Input Example
- import GFSPm as sp
+ import GFSPm as gf
  
- _ap = sp.GFSPm('inputFile',"neighborFile",minSup,"separator")
+ _ap = gf.GFSPm('inputFile',"neighborFile",minSup,"separator")
  _ap.startMine()
  _Patterns = _ap.getPatterns()
  _memUSS = _ap.getMemoryUSS()
