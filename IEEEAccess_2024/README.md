@@ -91,21 +91,21 @@ python3 GFSPm.py inputFile, neighborFile, OutputFile, minSup separater<br>
   sep="\t"<br>
   ## 5 FIFA
   inputdata:fifa.txt<br>
-  neighbordata:fifa5.txt,fifa7.txt, "!"fifa9.txt
+  neighbordata:fifa5.txt,fifa7.txt, "!"fifa9.txt<br>
   minsup:0.15,0.16,0.17...<br>
 
   ## 6 BMS1
   inputdata:BMS1.txt<br>
-  neighbordata:BMS1_5.txt,BMS1_7.txt, BMS1_9.txt
+  neighbordata:BMS1_5.txt,BMS1_7.txt, BMS1_9.txt<br>
   minsup:0.1,0.12,0.14...<br>
 
   ## 7 Kosarak
   inputdata:Kosarak.txt<br>
-  "!"neighbordata:Kosarak5.txt,Kosarak7.txt, Kosarak9.txt
+  "!"neighbordata:Kosarak5.txt,Kosarak7.txt, Kosarak9.txt<br>
   minsup:2,3,4...<br>
 
   ## 7 BIKE
   inputdata:bike.txt<br>
-  neighbordata:bike5.txt,bike7.txt, bike9.txt
+  neighbordata:bike5.txt,bike7.txt, bike9.txt<br>
   minsup:2,3,4...<br>
   
